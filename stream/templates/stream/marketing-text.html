@@ -1,0 +1,21 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load wagtail_srcset_tags %}
+
+<div class="container">
+    <div class="row"> 
+        <div class="col-12 col-md-6">
+            <small>{{ self.subline }}</small>
+            <h1>{{ self.heading }}</h1>
+            <div>
+                {{ self.paragraph }}
+            </div>
+        </div>
+        <div class="col-12 col-md-6 order-md-{{ self.text_align }}">
+            {% srcset_image self.image width-100 as thumbnail %}
+            <img id="img-{{ img.pk }}" src="{{ thumbnail.url }}" class="img-fluid" srcset="{{ thumbnail.srcset }}" />
+        </div>
+    </div>
+</div>
+
+

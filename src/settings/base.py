@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "wagtail_localize",
     "wagtail_localize.locales",
+    "wagtail_srcset.apps.WagtailSrcsetConfig",
     "stream",
     "menu",
 ]

@@ -1,0 +1,16 @@
+# .gitignore
+/node_modules/
+../.env
+../env
+.env
+db.sqlite3
+env/
+requirements.txt
+_____xdb.sqlite3
+# Datenbankdatei
+db.sqlite3
+
+__pycache__/
+./src/__pycache__
+./home/__pycache__
+./home/migrations/__pycache__

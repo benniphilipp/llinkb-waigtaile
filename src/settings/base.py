@@ -26,6 +26,9 @@ from django.utils.translation import gettext_lazy as _
 INSTALLED_APPS = [
     "home",
     "search",
+    "stream",
+    "menu",
+    "service",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -48,8 +51,6 @@ INSTALLED_APPS = [
     "wagtail_localize",
     "wagtail_localize.locales",
     "wagtail_srcset.apps.WagtailSrcsetConfig",
-    "stream",
-    "menu",
 ]
 
 MIDDLEWARE = [

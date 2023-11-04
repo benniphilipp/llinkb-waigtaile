@@ -91,3 +91,16 @@ class CardsBlock(blocks.StructBlock):
         icon = 'edit'
         label = "Cards"
         min_num = 2
+
+
+# Text Block
+class TextBlock(blocks.StructBlock):
+    headline = blocks.CharBlock(form_classname="Title", blank=True)
+    paragraph = blocks.RichTextBlock(blank=True)
+    
+    
+    class Meta:
+        template = 'stream/text.html'
+        icon = 'edit'
+        label = "Text"
+    

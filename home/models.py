@@ -4,7 +4,7 @@ from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel, ObjectList, TabbedInterface
 from wagtail.models import Page
 
-from stream.blocks import MarketingBlock
+from stream.blocks import MarketingBlock, JumbotronBlock
 
 class HomePage(Page):
     template = "home/home_page.html"
@@ -22,6 +22,7 @@ class HomePage(Page):
     
     # StreamField
     content = StreamField([
+        ('jumbotron_block', JumbotronBlock()),
         ('marketing_block', MarketingBlock()),
     ], 
     blank=True,           

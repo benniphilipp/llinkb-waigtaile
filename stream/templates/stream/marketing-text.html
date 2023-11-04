@@ -3,17 +3,19 @@
 {% load wagtail_srcset_tags %}
 
 <div class="container">
-    <div class="row"> 
-        <div class="col-12 col-md-6">
-            <small>{{ self.subline }}</small>
-            <h1>{{ self.heading }}</h1>
-            <div>
-                {{ self.paragraph }}
+    <div class="row position-relative overflow-hidden p-3 d-flex align-items-center"> 
+        <div class="col-12 col-lg-6 col-md-12 px-xl-5 d-flex align-items-center">
+            <div class="px-xl-5 p-sm-1 p-md-2">
+                <small>{{ self.subline }}</small>
+                <h1>{{ self.heading }}</h1>
+                <div>
+                    {{ self.paragraph }}
+                </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 order-md-{{ self.text_align }}">
+        <div class="col-12 col-lg-6 col-md-12 px-xl-5 d-flex align-items-center order-lg-{{ self.text_align }}">
             {% srcset_image self.image width-100 as thumbnail %}
-            <img id="img-{{ img.pk }}" src="{{ thumbnail.url }}" class="img-fluid" srcset="{{ thumbnail.srcset }}" />
+            <img id="img-{{ img.pk }}" src="{{ thumbnail.url }}" class="img-fluid p-sm-1 p-md-2" srcset="{{ thumbnail.srcset }}" />
         </div>
     </div>
 </div>

@@ -29,6 +29,8 @@ class ServidePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('headline'),
         FieldPanel('text'),
+        FieldPanel('cta_text'),
+        FieldPanel('page_link'),
     ]
     
     '''@Todo StreamField'''

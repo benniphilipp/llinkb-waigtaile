@@ -1,4 +1,5 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar menus_tags %}
+{% get_menu "main" as navigation %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,11 +60,11 @@
         <div class="container">
             <footer class="py-3 my-4">
               <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+                {% for item in navigation.menu_items.all %}
+                    <li>
+                        <li class="nav-item"><a href="{{ item.link }}" class="nav-link px-2 text-body-secondary" {% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a></li>
+                    </li>
+                {% endfor %}
               </ul>
               <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
             </footer>

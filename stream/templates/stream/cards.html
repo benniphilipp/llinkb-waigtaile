@@ -1,0 +1,16 @@
+
+
+<div class="container">
+    <div class="row align-items-md-stretch my-xl-5 mx-xl-5 mx-lg-2 my-lg-4 mx-md-2 my-md-2 mx-sm-1 my-sm-1 my-3 mx-2">
+        {% for card in self.cards %}
+            <div class="col-md-6">
+                <div class="h-100 p-5 {{ card.color_scheme }} rounded-3">
+                <h2>{{ card.titel }}</h2>
+                <p>{{ card.text }}</p>
+                <a href="{{ card.button_page }}" class="btn btn-outline-secondary" type="button">{{ card.cta }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+

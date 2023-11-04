@@ -40,10 +40,11 @@ class MarketingBlock(blocks.StructBlock):
 class JumbotronBlock(blocks.StructBlock):
     headline = blocks.CharBlock(form_classname="Title", blank=True)
     paragraph = blocks.RichTextBlock(blank=True)
+    button_text = blocks.CharBlock(form_classname="Button Text", blank=True)
     
     bg_color = blocks.ChoiceBlock(
         max_length=20,
-        choices=[('bg-body-tertiary', 'Tertiary'), ('text-bg-dark', 'Dark')],
+        choices=[('bg-body-tertiary', 'Tertiary'), ('Light', 'Dark')],
         blank=True,
         default='text-bg-dark',
         label='Hintergrund Farbe',
@@ -59,3 +60,34 @@ class JumbotronBlock(blocks.StructBlock):
         template = 'stream/jumbotron.html'
         icon = 'edit'
         label = "Jumbotron"
+        
+        
+# Cards
+class CardsBlock(blocks.StructBlock):
+    
+    cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("titel", blocks.CharBlock(required=True, max_length=40, label="Titel")),
+                ("text", blocks.TextBlock(required=True, max_length=200, label="Textbereich")),
+                ("button_page", blocks.PageChooserBlock(required=False, label="Seiten Verlinkung")),
+                ("cta", blocks.CharBlock(required=True, max_length=40, label="cta")),
+                ("color_scheme", blocks.ChoiceBlock(
+                    max_length=20,
+                    choices=[
+                        ('bg-body-tertiary', 'Light'),
+                        ('text-bg-dark', 'Dark'),
+                    ],
+                    blank=True,
+                    default='light',
+                    label='Farbschema',
+                )),
+            ]
+        )
+    )
+    
+    class Meta:
+        template = 'stream/cards.html'
+        icon = 'edit'
+        label = "Cards"
+        min_num = 2

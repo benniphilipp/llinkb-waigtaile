@@ -32,6 +32,7 @@ DATABASES = {
     }
 }
 
+WAGTAILADMIN_BASE_URL = "https://llinkb.be"
 
 try:
     from .local import *

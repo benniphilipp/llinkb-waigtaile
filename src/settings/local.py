@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import urllib3
-from environ import Env
+import environ
 
 env = environ.Env(
     ENVIRONMENT=(str, "local"),

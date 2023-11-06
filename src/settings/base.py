@@ -180,3 +180,8 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ('en', _('Englisch')),
     ('de', _('Deutsch')),
 ]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "https://llinkb.be",
+]

@@ -1,7 +1,13 @@
 import os
+from pathlib import Path
+import urllib3
 from environ import Env
 
-env = Env()
+env = environ.Env(
+    ENVIRONMENT=(str, "local"),
+    DEBUG=(bool, False)
+)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))

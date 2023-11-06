@@ -1,0 +1,17 @@
+[0;1;31m●[0m wagtail_gunicorn.service - gunicorn daemon for Wagtail
+   Loaded: loaded (/etc/systemd/system/wagtail_gunicorn.service; enabled; vendor preset: enabled)
+   Active: [0;1;31mfailed[0m (Result: exit-code) since Mon 2023-11-06 10:26:12 CET; 3s ago
+  Process: 9477 ExecStartPre=/root/wagtail/env/bin/python3.8 -V (code=exited, status=0/SUCCESS)
+  Process: 9478 ExecStart=/root/wagtail/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn_wagtail.sock src.wsgi:application [0;1;31m(code=exited, status=1/FAILURE)[0m
+ Main PID: 9478 (code=exited, status=1/FAILURE)
+
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:     self.stop()
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:   File "/root/wagtail/env/lib/python3.8/site-packages/gunicorn/arbiter.py", line 396, in stop
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:     time.sleep(0.1)
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:   File "/root/wagtail/env/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:     self.reap_workers()
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:   File "/root/wagtail/env/lib/python3.8/site-packages/gunicorn/arbiter.py", line 530, in reap_workers
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Nov 06 10:26:12 v2202305107229227682 gunicorn[9478]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Nov 06 10:26:12 v2202305107229227682 systemd[1]: [0;1;39m[0;1;31m[0;1;39mwagtail_gunicorn.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 06 10:26:12 v2202305107229227682 systemd[1]: [0;1;39m[0;1;31m[0;1;39mwagtail_gunicorn.service: Failed with result 'exit-code'.[0m

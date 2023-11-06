@@ -1,5 +1,10 @@
 import os
+from environ import Env
 
+env = Env()
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 env = os.environ.copy()
 
 DEBUG = False

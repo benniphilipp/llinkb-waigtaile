@@ -50,6 +50,13 @@ class JumbotronBlock(blocks.StructBlock):
         label='Hintergrund Farbe',
     )
     
+    # URL-Feld
+    external_url = blocks.URLBlock(
+        blank=True,
+        null=True,
+        help_text="Geben Sie eine externe URL ein, falls erforderlich."
+    )
+
     page_link = blocks.PageChooserBlock(
         required=False,
         help_text="Wählen Sie die verlinkte Seite aus",

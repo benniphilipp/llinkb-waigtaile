@@ -24,6 +24,13 @@ class HomePage(Page):
         verbose_name="Seiten Verlinkung",
         related_name='+',
     )
+    
+    # URL-Feld
+    external_url = models.URLField(
+        blank=True,
+        null=True,
+        help_text="Geben Sie eine externe URL ein, falls erforderlich."
+    )
 
     # Hero Fields
     content_panels = Page.content_panels + [
@@ -31,6 +38,7 @@ class HomePage(Page):
         FieldPanel('subline'),
         FieldPanel('cta_text'),
         FieldPanel('page_link'),
+        FieldPanel('external_url'),
     ]
     
     # StreamField

@@ -7,7 +7,9 @@
                 <div class="h-100 p-5 {{ card.color_scheme }} rounded-3">
                 <h2>{{ card.titel }}</h2>
                 <p>{{ card.text }}</p>
+                {% if button_page %}
                 <a href="{{ card.button_page }}" class="btn btn-outline-secondary" type="button">{{ card.cta }}</a>
+                {% endif %}
                 </div>
             </div>
         {% endfor %}
